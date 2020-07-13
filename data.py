@@ -5,6 +5,7 @@ from collections import Counter
 counts = Counter(reuters.words())
 # total_count = len(reuters.words())
 
+
 # The most common 20 words are ...
 # print
 # counts.most_common(n=20)
