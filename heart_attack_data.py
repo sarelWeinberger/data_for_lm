@@ -12,12 +12,17 @@ print(description[:])
 # use specific data:
 heart_data.drop(columns=['restecg'], inplace=True)
 
-# calc new val for, to diffrent column for prediction:
+# calc new val for, two different column for prediction:
 heart_data['full chances'] = heart_data['age'].apply(float) - (heart_data['exang'].apply(float) * 20)
 print(heart_data.head())
 
 #full sum:
-print(heart_data['full chances'].sum())
+#print(heart_data['full chances'].sum())
+
+list_of_selected_rows = [3,6,7,8,11]
+
+new_data = heart_data.loc[list_of_selected_rows]
+print(new_data.head(7))
 
 # change_specific column name:
 heart_data.rename(columns={'fbs' : 'fasting_blood_sugar' },inplace=True)
